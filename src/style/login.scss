@@ -1,0 +1,19 @@
+/*
+ * @Date: 2020-09-24 13:59:47
+ * @information: 登录页面
+ */
+#login {
+
+  .form-container {
+    width: 40%;
+    margin: 200px auto 0;
+    .el-form-item.btn-box {
+      text-align: center;
+      .el-form-item__content {
+        margin-left: 0 !important;
+        
+      }
+    }
+  }
+
+}

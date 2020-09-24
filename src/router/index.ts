@@ -4,15 +4,37 @@
  */
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/login', // 登录页面
+    name: 'login',
+    component: () => import('@/views/Login.vue'),
+  },
+  {
+    path: '/register', // 注册页面
+    name: 'register',
+    component: () => import('@/views/Register.vue'),
+  },
+  {
+    path: '/home', // 主页面
     name: 'Home',
-    component: Home
+    component: () => import('@/views/Home.vue'),
+  },
+  {
+    path: '*', // NotFound
+    name: 'notFound',
+    component: () => import('@/views/NotFound.vue'),
+  },
+  {
+    path: '*', // home
+    redirect: '/login'
   },
 
 ]

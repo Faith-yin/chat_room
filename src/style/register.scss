@@ -1,0 +1,19 @@
+/*
+ * @Date: 2020-09-24 16:54:04
+ * @information: 注册
+ */
+ #register {
+
+  .form-container {
+    width: 40%;
+    margin: 200px auto 0;
+    .el-form-item.btn-box {
+      text-align: center;
+      .el-form-item__content {
+        margin-left: 0 !important;
+        
+      }
+    }
+  }
+
+ }
