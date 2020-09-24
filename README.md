@@ -1,19 +1,7 @@
+<!--
+ * @Date: 2020-09-22 18:41:29
+ * @information: readme
+-->
 # chat_room
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+> 2020.09.23
