@@ -4,20 +4,29 @@
 -->
 <template>
   <div id="home">
-    111
+    <!-- 标题 -->
+    <base-title></base-title>
+    <!-- 主体内容 -->
+    <div class="container">
+      
+    </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
+import BaseTitle from '@/components/base/BaseTitle.vue'
 
-export default {
+@Component({
+  components: {
+    BaseTitle
+  },
+})
+export default class Home extends Vue {
 
 }
 </script>
 
 <style lang="scss">
-#home {
-
-  
-}
+@import '@/style/home.scss';
 </style>

@@ -24,17 +24,13 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/home', // 主页面
-    name: 'Home',
+    name: 'home',
     component: () => import('@/views/Home.vue'),
   },
   {
     path: '*', // NotFound
     name: 'notFound',
     component: () => import('@/views/NotFound.vue'),
-  },
-  {
-    path: '*', // home
-    redirect: '/login'
   },
 
 ]

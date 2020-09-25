@@ -8,7 +8,7 @@
     <base-title titleText="Welcome to Register Chat_Room_On_Line !"></base-title>
     <!-- 表单容器 -->
     <div class="form-container">
-      <el-form :model="loginForm" :rules="ruleForm" ref="loginFormRef" label-width="0px" class="login-form">
+      <el-form :model="loginForm" :rules="registerRuleForm" ref="formRef" label-width="0px" class="login-form">
         <el-form-item prop="username">
           <el-input v-model="loginForm.username"
                     prefix-icon="el-icon-user"
@@ -48,36 +48,17 @@
 import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
 import {register} from '@/interface'
 import BaseTitle from '@/components/base/BaseTitle.vue'
+import baseApi from '@/api/base_api'
+import {validForm} from '@/model'
+import {baseMixins} from '@/mixins'
 
 @Component({
   components: {
     BaseTitle
-  }
+  },
+  mixins: [validForm, baseMixins],
 })
-export default class  extends Vue {
-  validRepeat = (rule: any, value: string, callback: any) => {
-    if(value !== this.ruleForm.passwordf) {
-      callback(new Error('两次密码输入不一致'))
-    } else {
-      callback()
-    }
-  }
-  // 校验规则
-  ruleForm: any = {
-    username: [
-      {required: true, message: '请输入用户名称', trigger: 'blur'},
-      {min: 2, max: 12, message: '长度在 2 到 12 个字符', trigger: 'blur'},
-    ],
-    password: [
-      {required: true, message: '请输入用户密码', trigger: 'blur'},
-      {min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur'},
-    ],
-    rePassword: [
-      {required: true, message: '请再次输入用户密码', trigger: 'blur'},
-      {min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'blur'},
-      {validator: this.validRepeat, trigger: 'blur'},
-    ],
-  }
+export default class Register extends Vue {
   // 表单
   loginForm: register.RegisterInter = {
     username: '',
@@ -95,7 +76,7 @@ export default class  extends Vue {
    */
   async onSubmit(): Promise<void> {
     // 校验表单
-    let valid = await (this.$refs.loginFormRef as HTMLFormElement).validate()
+    let valid = await (this.$refs.formRef as HTMLFormElement).validate()
     if(!valid) return;
   }
 
