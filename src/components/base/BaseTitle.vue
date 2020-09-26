@@ -23,7 +23,7 @@ export default class  extends Vue {
 <style lang="scss">
 #base-title {
   .title-text {
-    margin: 30px 0;
+    margin: 20px 0;
     color: #FB7299;
     font-size: 30px;
     text-align: center;

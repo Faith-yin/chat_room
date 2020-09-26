@@ -3,6 +3,34 @@
  * @information: 基础样式
  */
 
+// 文字...
+.font-hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #E2E2E2;
+}
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  border-radius:10px;
+  background-color: #fff;
+}
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #d8d8d8;
+  &:hover {
+    background-color: #bdbdbd;
+    cursor: pointer !important;
+  }
+}
+
 
 
 

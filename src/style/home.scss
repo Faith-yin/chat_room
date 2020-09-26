@@ -5,9 +5,15 @@
 #home {
   .container {
     width: 85%;
+    min-width: 1024px;
     min-height: calc(100vh - 110px);
+    max-height: calc(100vh - 110px);
     margin: 0 auto;
     border: 1px solid #FB7299;
+    display: flex;
 
+    .right-container {
+      width: inherit;
+    }
   }
 }
