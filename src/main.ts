@@ -8,13 +8,14 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import install from '@/config'
 import util from '@/assets/js/utils'
-import '@/config/axios'
 import '@/style/base.scss'
 
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.use(install)
 
 Vue.prototype.$util = util
 

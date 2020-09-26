@@ -47,15 +47,11 @@
 <script lang="ts">
 import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
 import {register} from '@/interface'
-import BaseTitle from '@/components/base/BaseTitle.vue'
 import baseApi from '@/api/base_api'
 import {validForm} from '@/model'
 import {baseMixins} from '@/mixins'
 
 @Component({
-  components: {
-    BaseTitle
-  },
   mixins: [validForm, baseMixins],
 })
 export default class Register extends Vue {

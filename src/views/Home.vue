@@ -25,20 +25,9 @@
 
 <script lang="ts">
 import {Component, Prop, Vue, Watch} from 'vue-property-decorator';
-import BaseTitle from '@/components/base/BaseTitle.vue'
-import MineTab from '@/components/business/MineTab.vue'
-import ListTab from '@/components/business/ListTab.vue'
-import ChatRoom from '@/components/business/ChatRoom.vue'
 import components from '@/interface/components'
 
-@Component({
-  components: {
-    BaseTitle,
-    MineTab,
-    ListTab,
-    ChatRoom,
-  },
-})
+@Component
 export default class Home extends Vue {
   // 当前tab(消息：1，联系人：2)
   activeTab: number = 1
