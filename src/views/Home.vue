@@ -12,12 +12,16 @@
       <mine-tab :activeTab="activeTab"
                 @message="activeTab=1"
                 @person="activeTab=2"></mine-tab>
-      <!-- 列表 -->
-      <list-tab v-show="activeTab===1"
-                @on-item-click="onChatItemClick"></list-tab>
       <!-- 右侧区域 -->
       <div class="right-container" v-show="activeTab===1">
-        <chat-room :activeChatInfo="activeChatInfo"></chat-room>
+        <!-- 列表 -->
+        <chat-list @on-item-click="onChatItemClick"></chat-list>
+        <!-- 聊天区域 -->
+        <chat-room  v-if="Object.keys(activeChatInfo).length"
+                    :activeChatInfo="activeChatInfo"></chat-room>
+        <!-- 未选择聊天对象时 -->
+        <div  v-else
+              class="empty-box">主动一点，世界更大~</div>
       </div>
     </div>
   </div>

@@ -4,10 +4,13 @@
 -->
 <template>
   <div id="mine-tab">
-    <div class="tab-item">
-      <el-avatar  icon="el-icon-user-solid" 
-                  title="我的"
-                  @click="onMineClick"></el-avatar>
+    <div class="tab-item tab-item--mine" @click="onMineClick">
+      <el-dropdown placement="bottom-start" @command="onCommandClick">
+        <el-avatar  icon="el-icon-user-solid" title="我的"></el-avatar>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command="onLoginOut">退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
     </div>
     <div class="tab-item">
       <i  :class="['el-icon-chat-dot-round', {'active-tab': activeTab===1}]" 
@@ -24,6 +27,7 @@
 
 <script lang="ts">
 import {Component, Emit, Prop, Vue, Watch} from 'vue-property-decorator';
+import {components} from '@/interface'
 
 @Component
 export default class MineTab extends Vue {
@@ -53,6 +57,19 @@ export default class MineTab extends Vue {
   @Emit("person")
   onPersonClick():void {}
 
+  /**
+   * @author: ypf
+   * @Date: 2020-09-26 14:33:29
+   * @information: 我的菜单被点击时
+   */
+  onCommandClick(val:string):void {
+    val && this[val]()
+  }
+
+  onLoginOut():void {
+    this.$router.push({name: 'login'})
+  }
+
 }
 </script>
 
@@ -78,6 +95,10 @@ export default class MineTab extends Vue {
     .active-tab {
       color: #FB7299;
     }
+  }
+
+  .tab-item--mine span {
+    cursor: pointer;
   }
 
 }

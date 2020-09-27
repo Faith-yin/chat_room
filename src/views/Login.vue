@@ -53,7 +53,6 @@ export default class Login extends Vue {
   }
   // 登录按钮loading
   loginBtnLoading: boolean = false
-  $util: any
 
 
   /**

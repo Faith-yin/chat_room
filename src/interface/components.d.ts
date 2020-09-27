@@ -9,5 +9,4 @@ export interface dataListInter {
   username?: string,
   message?: string,
   time?: string | date,
-
 }

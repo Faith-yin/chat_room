@@ -13,7 +13,20 @@
     display: flex;
 
     .right-container {
+      flex-grow: 1;
       width: inherit;
+      display: flex;
+      #chat-room {
+        width: inherit;
+      }
+      .empty-box {
+        margin: 0 auto;
+        padding: 25% 0;
+        font-size: 24px;
+        color: #ff6700;
+        font-family: system-ui;
+      }
     }
+
   }
 }
