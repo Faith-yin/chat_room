@@ -11,6 +11,10 @@ module.exports = {
     // proxy: {
 
     // },
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',
+  // 是否使用包含运行时编译器的 Vue 构建版本
+  runtimeCompiler: true
+
   
 }
